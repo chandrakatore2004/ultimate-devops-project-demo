@@ -5,6 +5,8 @@ on:
     pull_request:
         branches:
         - main
+permissions:
+  contents: write
 
 jobs:
     build:
@@ -78,7 +80,7 @@ jobs:
         
     updatek8s:    
         runs-on: ubuntu-latest
-        needs: [docker-build, code-quality]
+        needs: [docker-build]
         
         steps:
         - name: checkout code
@@ -94,13 +96,11 @@ jobs:
         - name: Commit and push changes
           run: |
              git config --global user.email "chandrakatore@gmail.com"
-             git config --global user.name "chandrakatore22@gmail.com"
+             git config --global user.name "chandrakatore@gmail.com"
              git add kubernetes/productcatalog/deploy.yaml
              git commit -m "[CI]: Update product catalog service image tag to ${{github.run_id}}"       
-             git push origin main
+             git push origin HEAD:main -f
 
-
-          
 
     
   
