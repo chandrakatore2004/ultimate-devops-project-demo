@@ -55,7 +55,7 @@ jobs:
             working-directory: src/product-catalog 
             
     docker-build:
-        runs-on: ubuntu-latest
+        runs-on: QA
 
         needs: build
 
@@ -82,7 +82,7 @@ jobs:
 
         
     updatek8s:    
-        runs-on: ubuntu-latest
+        runs-on: QA
         needs: [docker-build]
         
         steps:
