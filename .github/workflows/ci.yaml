@@ -13,7 +13,7 @@ permissions:
 
 jobs:
     build:
-        runs-on: qa
+        runs-on: QA
 
         steps:
         - name: checkout code
