@@ -97,7 +97,7 @@ jobs:
             platforms: linux/amd64
             tags: |
               ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}
-              ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/product-catalog:${{ steps.set_tag.outputs.sha_tag }}
+              ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/product-catalog:${{ github.run_id }}
            
           
 
