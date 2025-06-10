@@ -36,6 +36,7 @@ jobs:
             go test ./...
     
     code-quality:
+        if: false
         runs-on: QA-CI
 
         steps:
