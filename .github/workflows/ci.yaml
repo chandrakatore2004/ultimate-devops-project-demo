@@ -13,7 +13,7 @@ permissions:
 
 jobs:
     build:
-        runs-on: QA
+        runs-on: QA-CI
 
         steps:
         - name: checkout code
@@ -36,7 +36,7 @@ jobs:
             go test ./...
     
     code-quality:
-        runs-on: QA
+        runs-on: QA-CI
 
         steps:
         - name: checkout code
@@ -55,7 +55,7 @@ jobs:
             working-directory: src/product-catalog 
             
     docker-build:
-        runs-on: QA
+        runs-on: QA-CI
 
         needs: build
 
@@ -103,7 +103,7 @@ jobs:
 
         
     updatek8s:    
-        runs-on: QA
+        runs-on: QA-CI
         needs: [docker-build]
         
         steps:
