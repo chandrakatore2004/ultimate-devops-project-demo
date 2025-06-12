@@ -3,7 +3,7 @@ name: CD to Amazon EKS
 on:
   push:
     branches:
-      - main
+      - githubcicheck
   workflow_dispatch:
 
 permissions:
@@ -34,3 +34,7 @@ jobs:
         kubectl get nodes
         kubectl apply -f kubernetes/productcatalog/deploy.yaml
         kubectl apply -f kubernetes/productcatalog/svc.yaml
+
+
+
+        
