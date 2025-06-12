@@ -123,11 +123,12 @@ jobs:
         
         - name: Commit and push changes
           run: |
-             git config --global user.email "chandrakatore@gmail.com"
-             git config --global user.name "chandrakatore@gmail.com"
-             git add kubernetes/productcatalog/deploy.yaml
-             git commit -m "[CI]: Update product catalog service image tag to ${{github.run_id}}"       
-             git push origin HEAD:githubcicheck -f
+            git config --global user.email "chandrakatore@gmail.com"
+            git config --global user.name "chandrakatore"
+            git remote set-url origin https://chandrakatore2004:${TOKEN}@github.com/chandrakatore2004/ultimate-devops-project-demo.git
+            git add kubernetes/productcatalog/deploy.yaml
+            git commit -m "[CI]: Update product catalog service image tag to ${{ github.run_id }}"
+            git push origin HEAD:main
 
 
     
