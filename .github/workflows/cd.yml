@@ -34,4 +34,4 @@ jobs:
         kubectl version --client=true
         kubectl get nodes
         kubectl apply -f kubernetes/productcatalog/deploy.yaml
-        kubectl rollout status deployment/product-catalog
+        kubectl apply -f kubernetes/productcatalog/svc.yaml
