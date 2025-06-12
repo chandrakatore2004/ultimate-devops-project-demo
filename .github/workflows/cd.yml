@@ -23,6 +23,7 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::543808516178:role/eks-oidc
         aws-region: ap-south-1
+        audience: sts.amazonaws.com
 
     - name: Setup kubectl config
       run: |
