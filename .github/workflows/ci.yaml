@@ -128,7 +128,7 @@ jobs:
             git remote set-url origin https://chandrakatore2004:${TOKEN}@github.com/chandrakatore2004/ultimate-devops-project-demo.git
             git add kubernetes/productcatalog/deploy.yaml
             git commit -m "[CI]: Update product catalog service image tag to ${{ github.run_id }}"
-            git push origin HEAD:main
+            git push origin HEAD:githubcicheck
 
 
     
